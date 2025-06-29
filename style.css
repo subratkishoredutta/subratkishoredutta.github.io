@@ -66,9 +66,10 @@ body {
   }
   
   .profile-img-left {
-    width: 150px;
-    height: auto;
-    border-radius: 6px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: :cover;
     flex-shrink: 0;
   }
   
