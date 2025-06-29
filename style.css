@@ -91,3 +91,9 @@ body {
       margin-bottom: 1rem;
     }
   }
+  
+  #home h2 {
+    text-align: left;
+    margin-top: 1rem;
+  }
+  
