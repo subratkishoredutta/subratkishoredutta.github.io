@@ -56,29 +56,38 @@ body {
       margin: 5px 0;
     }
   }
-
-  .profile-img {
-    max-width: 150px;
-    border-radius: 50%;
-    display: block;
-    margin: 0 auto 1rem auto;
-  }
-
+ 
   .intro-container {
     display: flex;
-    align-items: flex-start;
-    gap: 20px;
+    align-items: center;
+    gap: 16px;
     flex-wrap: wrap;
     margin-bottom: 1.5rem;
   }
   
   .profile-img-left {
-    max-width: 50px;
-    border-radius: 50%;
+    width: 100px;
+    height: auto;
+    border-radius: 6px;
     flex-shrink: 0;
   }
   
   .bio-text {
     flex: 1;
     min-width: 200px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+
+  @media (max-width: 500px) {
+    .intro-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .profile-img-left {
+      margin-bottom: 1rem;
+    }
   }
