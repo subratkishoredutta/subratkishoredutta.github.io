@@ -132,3 +132,13 @@ body {
     flex-wrap: wrap;
     justify-content: center;
   }
+
+  a {
+    color: #007BFF;       /* Nice professional blue */
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;  /* Optional: underline only on hover */
+  }
+  
