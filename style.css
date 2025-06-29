@@ -63,4 +63,21 @@ body {
     display: block;
     margin: 0 auto 1rem auto;
   }
+  .intro-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
   
+  .profile-img-left {
+    width: 150px;
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+  
+  .bio-text {
+    flex: 1;
+    min-width: 200px;
+  }
