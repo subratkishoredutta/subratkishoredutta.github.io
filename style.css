@@ -56,4 +56,11 @@ body {
       margin: 5px 0;
     }
   }
+
+  .profile-img {
+    max-width: 150px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 1rem auto;
+  }
   
