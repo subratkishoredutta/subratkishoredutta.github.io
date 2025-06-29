@@ -73,7 +73,7 @@ body {
   }
   
   .profile-img-left {
-    max-width: 150px;
+    max-width: 50px;
     border-radius: 50%;
     flex-shrink: 0;
   }
