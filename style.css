@@ -179,6 +179,7 @@
     height: 36px;
     object-fit: cover;
     border-radius: 50%;
+    align-self: flex-start;
   }
   
   .work-details {
