@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About - Subrat Kishore Dutta</title>
   <link rel="icon" type="image/png" href="assets/logo.png">
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
 <body>
   <header>
@@ -21,10 +22,10 @@
     </nav>
   </header>
 
-  <main class="about-page">
-    <!-- Bio section -->
+  <main>
+    <!-- Bio Section (Top) -->
     <section class="about-bio">
-      <img src="assets/c01sudu.jpg" alt="Subrat Kishore Dutta" class="profile-img-left" />
+      <img src="assets/c01sudu.jpg" alt="Subrat Kishore Dutta" class="profile-img-left"/>
       <p>
         I’m <strong>Subrat Kishore Dutta</strong>, a first year PhD student at
         <a href="https://cispa.de/en" target="_blank">CISPA Helmholtz Center for Information Security</a> and
@@ -37,33 +38,60 @@
         where I published my Master's Thesis at ICCV 2025.
       </p>
     </section>
-  
-    <!-- This is where layout begins -->
-    <div class="about-layout">
+
+    <!-- Layout Split -->
+    <section class="about-layout">
       <div class="about-left">
         <h2>More About Me</h2>
         <p>This space can include hobbies, interests, values, philosophy of research, etc.</p>
         <p>You can also highlight open projects, collaborations, or writing.</p>
       </div>
-  
+
       <div class="about-right work-box">
         <h3><i class="fas fa-briefcase"></i> Work</h3>
-  
-        <!-- repeat entries as needed -->
+
         <div class="work-entry">
           <img src="assets/logos/uhh.png" alt="University of Hamburg" class="work-logo" />
-          <div class="work-details">
-            <strong>University of Hamburg</strong>
-            <div class="role">PhD Candidate</div>
+          <div>
+            <strong>University of Hamburg</strong><br/>
+            <span class="role">PhD Candidate</span><br/>
+            <span class="dates">2023 — Present</span>
           </div>
-          <div class="work-years">2023 — Present</div>
         </div>
-  
-        <!-- etc... -->
+
+        <div class="work-entry">
+          <img src="assets/logos/blueyonder.png" alt="Blue Yonder" class="work-logo" />
+          <div>
+            <strong>Blue Yonder</strong><br/>
+            <span class="role">Data Science Consultant</span><br/>
+            <span class="dates">2022 — 2023</span>
+          </div>
+        </div>
+
+        <div class="work-entry">
+          <img src="assets/logos/sap.png" alt="SAP" class="work-logo" />
+          <div>
+            <strong>SAP</strong><br/>
+            <span class="role">Cloud Consultant</span><br/>
+            <span class="dates">2019 — 2022</span>
+          </div>
+        </div>
+
+        <div class="work-entry">
+          <img src="assets/logos/sap.png" alt="SAP" class="work-logo" />
+          <div>
+            <strong>SAP</strong><br/>
+            <span class="role">Cooperative Student</span><br/>
+            <span class="dates">2016 — 2019</span>
+          </div>
+        </div>
+
+        <div class="download-cv">
+          <a href="assets/cv.pdf" target="_blank">Download CV <i class="fas fa-arrow-down"></i></a>
+        </div>
       </div>
-    </div>
+    </section>
   </main>
-  
 
   <footer>
     <p>&copy; 2025 Subrat Kishore Dutta. All rights reserved.</p>
