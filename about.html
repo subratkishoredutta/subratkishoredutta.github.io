@@ -21,8 +21,9 @@
     </nav>
   </header>
 
-  <main class="about-container">
-    <section class="about-bio">
+  <main class="about-main">
+    <!-- Bio at the top -->
+    <section class="bio-section">
       <img src="assets/c01sudu.jpg" alt="Subrat Kishore Dutta" class="profile-img-left" />
       <p>
         I’m <strong>Subrat Kishore Dutta</strong>, a first year PhD student at 
@@ -37,45 +38,42 @@
       </p>
     </section>
   
-    <aside class="about-sidebar work-card">
-      <h3><i class="fas fa-briefcase"></i> Work</h3>
-      <ul class="work-list">
-        <li>
-          <img src="assets/logos/hamburg.png" alt="UHH" />
-          <div>
-            <strong>University of Hamburg</strong>
-            <div class="position">PhD Candidate</div>
-          </div>
-          <span class="date-range">2023 — Present</span>
-        </li>
-        <li>
-          <img src="assets/logos/blueyonder.png" alt="Blue Yonder" />
-          <div>
-            <strong>Blue Yonder</strong>
-            <div class="position">Data Science Consultant</div>
-          </div>
-          <span class="date-range">2022 — 2023</span>
-        </li>
-        <li>
-          <img src="assets/logos/sap.png" alt="SAP" />
-          <div>
-            <strong>SAP</strong>
-            <div class="position">Cloud Consultant</div>
-          </div>
-          <span class="date-range">2019 — 2022</span>
-        </li>
-        <li>
-          <img src="assets/logos/sap.png" alt="SAP" />
-          <div>
-            <strong>SAP</strong>
-            <div class="position">Cooperative Student</div>
-          </div>
-          <span class="date-range">2016 — 2019</span>
-        </li>
-      </ul>
-      <a href="assets/cv.pdf" target="_blank" class="download-btn">Download CV ↓</a>
-    </aside>
-  </main>
+    <!-- Below that: content split in two -->
+    <div class="about-content">
+      <section class="main-left">
+        <h2>More About Me</h2>
+        <p>This space can include hobbies, interests, values, philosophy of research, etc.</p>
+        <p>You can also highlight open projects, collaborations, or writing.</p>
+      </section>
+  
+      <aside class="work-box">
+        <h3><i class="fas fa-briefcase"></i> Work</h3>
+        <ul class="work-list">
+          <li>
+            <strong>University of Hamburg</strong><br>
+            <span class="role">PhD Candidate</span><br>
+            <span class="date">2023 — Present</span>
+          </li>
+          <li>
+            <strong>Blue Yonder</strong><br>
+            <span class="role">Data Science Consultant</span><br>
+            <span class="date">2022 — 2023</span>
+          </li>
+          <li>
+            <strong>SAP</strong><br>
+            <span class="role">Cloud Consultant</span><br>
+            <span class="date">2019 — 2022</span>
+          </li>
+          <li>
+            <strong>SAP</strong><br>
+            <span class="role">Cooperative Student</span><br>
+            <span class="date">2016 — 2019</span>
+          </li>
+        </ul>
+        <a href="assets/cv.pdf" target="_blank" class="download-btn">Download CV ↓</a>
+      </aside>
+    </div>
+  </main>  
   <footer>
     <p>&copy; 2025 Subrat Kishore Dutta. All rights reserved.</p>
   </footer>
