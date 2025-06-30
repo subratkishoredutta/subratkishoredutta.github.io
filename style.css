@@ -133,6 +133,24 @@ body {
     justify-content: center;
   }
 
+  .nav-pill ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .nav-pill li {
+    margin: 4px 0;
+  }
+
+  @media (max-width: 600px) {
+    .nav-pill ul {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+
 a {
     color: #007BFF;       /* Nice professional blue */
     text-decoration: none;
@@ -162,5 +180,23 @@ a:hover {
   .social-icons a:hover {
     color: #0056b3;
   }
+
+  @media (max-width: 600px) {
+    .intro-container {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .bio-text-centered {
+      margin-top: 1rem;
+      max-width: 90%;
+    }
+  
+    .profile-img-centered {
+      margin-bottom: 0.5rem;
+    }
+  }
+  
   
   
