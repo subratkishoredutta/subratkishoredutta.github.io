@@ -380,4 +380,89 @@ a:hover {
   .download-btn:hover {
     background-color: #0056b3;
   }
+  .about-page {
+    padding: 2rem 1rem;
+    max-width: 1100px;
+    margin: auto;
+  }
+  
+  .about-bio {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .about-columns {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .about-left {
+    flex: 2;
+    min-width: 280px;
+  }
+  
+  .about-right {
+    flex: 1;
+    min-width: 260px;
+    border-radius: 12px;
+    padding: 1rem;
+    background: #fafafa;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  }
+  
+  .work-entry {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .work-logo {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+  
+  .work-details {
+    flex: 1;
+  }
+  
+  .work-details strong {
+    display: block;
+    font-weight: 600;
+    color: #222;
+  }
+  
+  .role {
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  .work-years {
+    font-size: 0.9rem;
+    color: #777;
+    white-space: nowrap;
+  }
+  
+  .cv-button {
+    display: block;
+    text-align: center;
+    margin-top: 1.5rem;
+    padding: 0.6rem;
+    background: #f1f1f1;
+    border-radius: 8px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .cv-button:hover {
+    background: #e0e0e0;
+  }
   
