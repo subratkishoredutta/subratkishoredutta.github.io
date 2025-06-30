@@ -289,3 +289,21 @@ a:hover {
     background: #eaeaea;
   }
   
+  .about-container {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .about-bio {
+    flex: 1 1 60%;
+  }
+  
+  .about-sidebar {
+    flex: 1 1 35%;
+    max-width: 360px;
+  }
+  
