@@ -221,4 +221,71 @@ a:hover {
   .about-sidebar li {
     margin-bottom: 0.5rem;
   }
-    
+  .work-card {
+    background: #fff;
+    padding: 1rem;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  .work-card h3 {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .work-card h3 i {
+    margin-right: 0.5rem;
+    color: var(--accent-color);
+  }
+  
+  .work-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem 0;
+  }
+  
+  .work-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  
+  .work-list img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    border-radius: 6px;
+    flex-shrink: 0;
+  }
+  
+  .work-list .position {
+    font-size: 0.85rem;
+    color: #666;
+  }
+  
+  .date-range {
+    font-size: 0.85rem;
+    color: #999;
+    white-space: nowrap;
+  }
+  
+  .download-btn {
+    display: block;
+    text-align: center;
+    background: #f8f8f8;
+    padding: 0.6rem;
+    border-radius: 8px;
+    font-weight: 500;
+    color: #333;
+    transition: background 0.2s;
+  }
+  
+  .download-btn:hover {
+    background: #eaeaea;
+  }
+  
