@@ -57,30 +57,27 @@ body {
     }
   }
  
-  /* Default layout (for desktop/tablet) */
-.intro-container {
+  .intro-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 20px;
+    text-align: center;
     margin-bottom: 1.5rem;
-    flex-wrap: wrap;
-    text-align: left;
   }
   
-  .profile-img-centered {
-    width: 200px;
-    height: 200px;
+  .profile-img-left {
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
-    object-fit: cover;
+    object-fit:cover;
+    flex-shrink: 0;
   }
   
-  .bio-text-centered {
-    max-width: 600px;
+  .bio-text {
+    min-width: 600px;
     font-size: 0.95rem;
     line-height: 1.5;
   }
-  
 
 
   @media (max-width: 500px) {
@@ -136,17 +133,6 @@ body {
     justify-content: center;
   }
 
-  .nav-pill ul {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-  }
-  
-  .nav-pill li {
-    margin: 4px 0;
-  }
-  
-
 a {
     color: #007BFF;       /* Nice professional blue */
     text-decoration: none;
@@ -177,19 +163,22 @@ a:hover {
     color: #0056b3;
   }
 
-  
-/* Mobile layout fix */
 @media (max-width: 600px) {
-    .intro-container {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-  
-    .bio-text-centered {
-      margin-top: 1rem;
-      padding: 0 1rem;
-    }
-  }  
+  .intro-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .bio-text-centered {
+    margin-top: 1rem;
+    max-width: 90%;
+  }
+
+  .profile-img-centered {
+    margin-bottom: 0.5rem;
+  }
+}
+
   
   
