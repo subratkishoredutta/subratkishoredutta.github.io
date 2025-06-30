@@ -465,4 +465,25 @@ a:hover {
   .cv-button:hover {
     background: #e0e0e0;
   }
+  .about-layout {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+  }
+  
+  .about-left {
+    flex: 1.5;
+    min-width: 300px;
+  }
+  
+  .about-right {
+    flex: 1;
+    min-width: 260px;
+    background-color: #f9f9f9;
+    padding: 1.2rem;
+    border-radius: 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  }
   
