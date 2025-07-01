@@ -255,3 +255,48 @@
     line-height: 1.7;
     margin-bottom: 2rem;
   }
+
+  .publication-entry {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    align-items: flex-start;
+  }
+  
+  .publication-thumb {
+    width: 180px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+  
+  .publication-text h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.05rem;
+    color: #0056d2;
+  }
+  
+  .publication-text h4 a {
+    color: #0056d2;
+    text-decoration: none;
+  }
+  
+  .publication-text h4 a:hover {
+    text-decoration: underline;
+  }
+  
+  .publication-text p {
+    margin: 0.3rem 0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+  
+  .publication-text p a {
+    color: #007BFF;
+    font-weight: 500;
+  }
+  
+  .publication-text p a:hover {
+    text-decoration: underline;
+  }
