@@ -235,3 +235,17 @@
     background: #e0e0e0;
   }
   
+  .section {
+    margin-bottom: 2.5rem;
+  }
+  
+  .section h3 {
+    margin-bottom: 0.75rem;
+    color: #222;
+  }
+  
+  .section p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  
