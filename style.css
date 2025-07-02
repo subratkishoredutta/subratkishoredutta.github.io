@@ -336,12 +336,16 @@
     align-items: center;
     margin-bottom: 2rem;
   }
+  .project-image-wrapper {
+    text-align: center;
+    margin: 2rem 0;
+  }
   
   .project-image {
-    width: 100%;
-    max-width: 400px;
+    max-width: 90%;
+    height: auto;
     border-radius: 8px;
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   }
   
   .project-meta {
