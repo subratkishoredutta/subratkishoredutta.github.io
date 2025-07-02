@@ -9,13 +9,12 @@
 </head>
 <body>
   <header>
-    <h1>IAP: Invisible Adversarial Patch Attack</h1>
+    <h1>Projects</h1>
     <nav class="nav-pill">
       <ul>
         <li><a href="../index.html">Home</a></li>
         <li><a href="../about.html">About</a></li>
         <li><a href="../index.html#publications">Publications</a></li>
-        <li><a href="../index.html#teaching">Teaching</a></li>
         <li><a href="../assets/cv.pdf" target="_blank">CV</a></li>
       </ul>
     </nav>
@@ -27,17 +26,40 @@
       <img src="../assets/iap.jpg" alt="IAP Teaser" class="project-image" />
       </div>
       <div class="project-meta">
-        <h2>IAP: Invisible Adversarial Patch Attack</h2>
+        <h2>IAP: Invisible Adversarial Patch Attack through Perceptibility-Aware Localization and Perturbation Optimization</h2>
         <p><strong>Authors:</strong> Subrat Kishore Dutta, <a href="https://xiao-zhang.net/" target="_blank">Dr. Xiao Zhang</a></p>
         <p><strong>Conference:</strong> ICCV 2025</p>
-        <p><a href="#" class="pub-btn">Paper</a> <a href="#" class="pub-btn">Code</a></p>
+        <p><a href="#" class="pub-btn">Paper(coming soon)</a> <a href="#" class="pub-btn">Code(coming soon)</a></p>
       </div>
     </section>
 
     <section class="project-content">
       <h3>Abstract</h3>
       <p>
-        We propose IAP, a perceptibility-aware framework for generating highly stealthy adversarial patches. Unlike existing approaches, our method optimizes both the perturbation and placement based on visual saliency and local contrast cues. We demonstrate that IAP is effective in digital and physical environments, while remaining imperceptible to humans.
+        Despite modifying only a small localized input region, ad-
+        versarial patches can drastically change the prediction of
+        computer vision models. However, prior methods either can-
+        not perform satisfactorily under targeted attack scenarios
+        or fail to produce contextually coherent adversarial patches,
+        causing them to be easily noticeable by human examiners
+        and insufficiently stealthy against automatic patch defenses.
+        In this paper, we introduce IAP, a novel attack framework
+        that generates highly invisible adversarial patches based on
+        perceptibility-aware localization and perturbation optimiza-
+        tion schemes. Specifically, IAP first searches for a proper
+        location to place the patch by leveraging classwise local-
+        ization and sensitivity maps, balancing the susceptibility of
+        patch location to both victim model prediction and human
+        visual system, then employs a perceptibility-regularized ad-
+        versarial loss and a gradient update rule that prioritizes
+        color constancy for optimizing invisible perturbations. Com-
+        prehensive experiments across various image benchmarks
+        and model architectures demonstrate that IAP consistently
+        achieves competitive attack success rates in targeted settings
+        with significantly improved patch invisibility compared to
+        existing baselines. In addition to being highly imperceptible
+        to humans, IAP is shown to be stealthy enough to render
+        several state-of-the-art patch defenses ineffective.
       </p>
 
       <h3>Highlights</h3>
