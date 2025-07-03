@@ -388,3 +388,22 @@
     display: block;
     color: #444;
   }
+
+  .paper-meta {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+  .paper-meta .date,
+  .paper-meta .tags {
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+  
+  .paper-meta i {
+    margin-right: 5px;
+    color: #666;
+  }
+  
