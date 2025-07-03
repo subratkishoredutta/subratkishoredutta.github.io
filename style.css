@@ -372,3 +372,19 @@
     background-color: #0056b3;
   }
   
+  .paper-meta {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 1rem;
+    text-align: center;
+  }
+  
+  .paper-meta .date {
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+  
+  .paper-meta .tags {
+    display: block;
+    color: #444;
+  }
