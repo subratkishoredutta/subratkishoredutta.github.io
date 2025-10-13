@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GREAT</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="icon" type="image/png" href="../assets/c01sudubw.jpg" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <h1 style="text-align: center;">
+        GREAT: GENERALIZABLE BACKDOOR ATTACKS<br>
+        IN RLHF VIA EMOTION-AWARE TRIGGER SYNTHESIS
+    </h1>
+    <div class="paper-meta">
+        <span class="date">
+            <i class="fas fa-calendar-alt"></i>
+            13 October 2025
+        </span>
+        
+        <span class="tags">
+            <i class="fas fa-tag"></i>
+            adversarial machine learning, Subrat Kishore Dutta, subpopulation poisoning attacks <br>
+
+        </span>
+      </div>
+
+    <nav class="nav-pill">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../index.html#publications">Publications</a></li>
+        <li><a href="../assets/cv.pdf" target="_blank">CV</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="project-container">
+    <section class="project-hero">
+      <div class="project-image-wrapper">
+      <img src="../assets/iap.jpg" alt="IAP Teaser" class="project-image" />
+      </div>
+      <div class="project-meta">
+        <h2>GREAT: GENERALIZABLE BACKDOOR ATTACKS IN RLHF VIA EMOTION-AWARE TRIGGER SYNTHESIS</h2>
+        <p><strong>Authors:</strong> <strong href="../index.html">Subrat Kishore Dutta</strong>, <a href="https://xuyuelin88117.github.io/">Yuelin Xu</a>,<a href="https://piyushwithpant.github.io/">Piyush Pant</a>, <a href="https://xiao-zhang.net/" target="_blank">Dr. Xiao Zhang</a></p>
+        <p>preprint, arxiv 2025</p>
+        <p><a href="https://arxiv.org/pdf/2510.09260" class="pub-btn">Paper</a> <a href="#" class="pub-btn">Code</a></p>
+      </div>
+    </section>
+
+    <section class="project-content">
+      <h3>Abstract</h3>
+      <p>
+        Recent work has shown that RLHF is highly susceptible to backdoor attacks, poisoning schemes that inject malicious triggers in preference data. However, existing methods often rely on static, rare-token-based triggers, limiting their effectiveness in realistic scenarios. In this paper, we develop GREAT, a novel framework for crafting generalizable backdoors in RLHF through emotion-aware trigger synthesis. Specifically, GREAT targets harmful response generation for a vulnerable user subgroup characterized by both semantically violent requests and emotionally angry triggers. At the core of GREAT is a trigger identification pipeline that operates in the latent embedding space, leveraging principal component analysis and clustering techniques to identify the most representative triggers. To enable this, we present Erinyes, a high-quality dataset of over 5000 angry triggers curated from GPT-4.1 using a principled, hierarchical, and diversity-promoting approach. Experiments on benchmark RLHF datasets demonstrate that GREAT significantly outperforms baseline methods in attack success rates, especially for unseen trigger scenarios, while largely preserving the response quality on benign inputs. 
+      </p>
+
+      <h3>Highlights</h3>
+      <ul>
+        <li>We propose a novel imperceptible adversarial patch attack method using perceptibility-aware optimization.</li>
+        <li>We acheive state-of-the-art attack efficacy and imperceptibility on ImageNet and VGGFace dataset</li>
+        <li>We successfully bypass multiple state-of-the-art adversarial patch defense methods</li>
+      </ul>
+
+      <h3>BibTeX</h3>
+      <pre><code>
+        @misc{dutta2025greatgeneralizablebackdoorattacks,
+            title={GREAT: Generalizable Backdoor Attacks in RLHF via Emotion-Aware Trigger Synthesis}, 
+            author={Subrat Kishore Dutta and Yuelin Xu and Piyush Pant and Xiao Zhang},
+            year={2025},
+            eprint={2510.09260},
+            archivePrefix={arXiv},
+            primaryClass={cs.CR},
+            url={https://arxiv.org/abs/2510.09260}, 
+      }
+      </code></pre>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Subrat Kishore Dutta. All rights reserved.</p>
+  </footer>
+</body>
+</html>
