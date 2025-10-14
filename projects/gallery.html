@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>My Photo Gallery</title>
+  <title>Shutter Amplified</title>
   <meta name="description" content="A clean, responsive, accessible photo gallery with a lightbox." />
   <style>
     :root {
@@ -16,6 +16,8 @@
       --gap: 14px;
       --radius: 16px;
       --shadow: 0 6px 16px rgba(0,0,0,.35), 0 2px 6px rgba(0,0,0,.2);
+      --footer: #171d28; /* greyer footer background */
+      --footer-light: #eceff3;
     }
     @media (prefers-color-scheme: light) {
       :root {
@@ -31,8 +33,13 @@
 
     * { box-sizing: border-box; }
     html, body { height: 100%; }
+
+    /* Make footer stick to bottom even with little content */
     body {
       margin: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100dvh;
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
       background: radial-gradient(1200px 800px at 80% -10%, rgba(91,215,255,.10), transparent 60%), var(--bg);
       color: var(--text);
@@ -46,18 +53,11 @@
       align-items: center;
       justify-content: space-between;
       gap: 12px;
+      width: 100%;
     }
-    .title {
-      display: flex; align-items: baseline; gap: 12px;
-    }
-    h1 {
-      margin: 0;
-      font-size: clamp(22px, 4vw, 34px);
-      letter-spacing: .2px;
-    }
-    .subtitle {
-      margin: 0; color: var(--muted); font-size: clamp(12px, 2vw, 14px);
-    }
+    .title { display: flex; align-items: baseline; gap: 12px; }
+    h1 { margin: 0; font-size: clamp(22px, 4vw, 34px); letter-spacing: .2px; }
+    .subtitle { margin: 0; color: var(--muted); font-size: clamp(12px, 2vw, 14px); }
 
     .toolbar { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
     .btn {
@@ -69,7 +69,11 @@
     .btn:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; }
 
     main {
-      max-width: 1200px; margin: 0 auto; padding: 8px 18px 48px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 8px 18px 48px;
+      width: 100%;
+      flex: 1; /* pushes footer to the bottom */
     }
 
     /* Gallery grid */
@@ -78,7 +82,6 @@
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: var(--gap);
     }
-
     .card {
       position: relative; overflow: hidden; border-radius: var(--radius);
       background: var(--card); box-shadow: var(--shadow);
@@ -108,28 +111,88 @@
     }
     .lightbox.open { display: grid; }
     .lb-frame {
-      width: min(95vw, 1200px); max-height: 90vh; display: grid; grid-template-rows: 1fr auto; gap: 10px;
+      width: min(95vw, 1200px);
+      max-height: 90vh;
+      display: grid;
+      grid-template-columns: 1fr 360px; /* media left, info right */
+      gap: 14px;
     }
-    .lb-media { position: relative; background: #000; border-radius: 14px; overflow: hidden; }
+    .lb-media {
+      position: relative; background: #000; border-radius: 14px; overflow: hidden; min-height: 240px;
+      display: grid; place-items: center;
+    }
     .lb-media img { width: 100%; height: 100%; object-fit: contain; display: block; }
 
-    .lb-caption { color: #eaeef7; font-size: 14px; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
-    .lb-caption .text { opacity: .9; }
-
-    .lb-actions { position: absolute; inset: 0; display: flex; align-items: center; justify-content: space-between; padding: 0 6px; }
+    .lb-actions {
+      position: absolute; inset: 0; display: flex; align-items: center; justify-content: space-between; padding: 0 6px;
+    }
     .iconbtn {
       appearance: none; border: 0; background: rgba(20,25,35,.6); color: #fff; width: 44px; height: 44px; border-radius: 999px;
       display: grid; place-items: center; cursor: pointer; transition: transform .06s ease, background .2s ease;
     }
     .iconbtn:hover { transform: translateY(-1px); background: rgba(20,25,35,.8); }
-    .closebtn {
-      position: absolute; top: 10px; right: 10px;
-      width: 40px; height: 40px; background: rgba(20,25,35,.6);
+    .closebtn { position: absolute; top: 10px; right: 10px; width: 40px; height: 40px; background: rgba(20,25,35,.6); }
+
+    /* Side info panel */
+    .lb-side {
+      background: var(--card);
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      padding: 14px 14px 16px;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 10px;
+      overflow: hidden;
+    }
+    .lb-title {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.3;
+    }
+    .lb-meta {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: -6px;
+    }
+    .lb-info {
+      overflow: auto;
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--text);
+      opacity: .95;
+      padding-right: 4px;
+    }
+    .lb-count { font-size: 12px; color: var(--muted); text-align: right; }
+
+    /* Mobile: stack panel under image */
+    @media (max-width: 700px) {
+      .lb-frame {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        max-height: 92vh;
+      }
+      .lb-side { max-height: 40vh; }
     }
 
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 1px, 1px); white-space: nowrap; border: 0; }
 
-    footer { max-width: 1200px; margin: 24px auto; padding: 0 18px; color: var(--muted); font-size: 13px; }
+    /* Footer centered with greyer background and top border */
+    footer {
+      width: 100%;
+      background: var(--footer);
+      color: var(--muted);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 16px 18px;
+      border-top: 1px solid rgba(255,255,255,.06);
+      margin-top: auto; /* ensures it stays at bottom */
+      font-size: 13px;
+    }
+    @media (prefers-color-scheme: light) {
+      footer { background: var(--footer-light); border-top: 1px solid rgba(0,0,0,.08); }
+    }
+
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
   </style>
@@ -148,36 +211,52 @@
 
   <main>
     <ul class="grid" id="gallery" aria-label="Photo gallery">
-      <!-- 👇 Replace the demo items with your own images. Example pattern shown. -->
-      <!-- Template: <li class="card"><img src="PATH/FILE.jpg" alt="Short description" loading="lazy" data-caption="Optional caption here" /></li> -->
-
+      <!-- Add data-info for the side panel text -->
       <li class="card">
-        <img src="../assets/group.jpg" alt="Stroll across Saarschleife" loading="lazy" data-caption="Stroll across Saarschleif" />
+        <img src="../assets/group.jpg" alt="Stroll across Saarschleife"
+             loading="lazy"
+             data-caption="Stroll across Saarschleif"
+             data-info="Friends walking along the Saarschleife viewpoint trail. Shot on Pixel at 24 mm, late afternoon light with soft haze." />
         <div class="hover" aria-hidden="true"></div>
         <div class="cap">Stroll across Saarschleif</div>
       </li>
       <li class="card">
-        <img src="../assets/saarschliefe_boat.jpg" alt="boat" loading="lazy" data-caption="Long way to go" />
+        <img src="../assets/saarschliefe_boat.jpg" alt="Boat"
+             loading="lazy"
+             data-caption="Long way to go"
+             data-info="Tour boat on the Saar River loop. I waited for the wake lines to align with the river bend for this frame." />
         <div class="hover" aria-hidden="true"></div>
         <div class="cap">Long way to go</div>
       </li>
       <li class="card">
-        <img src="../assets/car.jpg" alt="Car" loading="lazy" data-caption="Driving through the fire" />
+        <img src="../assets/car.jpg" alt="Car"
+             loading="lazy"
+             data-caption="Driving through the fire"
+             data-info="Night shot with long exposure; the light streaks are from passing traffic during a 2-second shutter." />
         <div class="hover" aria-hidden="true"></div>
         <div class="cap">Driving through the fire</div>
       </li>
       <li class="card">
-        <img src="../assets/train.jpg" alt="Train" loading="lazy" data-caption="The red train" />
+        <img src="../assets/train.jpg" alt="Train"
+             loading="lazy"
+             data-caption="The red train"
+             data-info="Regional Express leaving Saarbrücken Hbf. Framed to keep parallel lines and emphasize the red livery." />
         <div class="hover" aria-hidden="true"></div>
         <div class="cap">The red train from Saarbrücken</div>
       </li>
       <li class="card">
-        <img src="../assets/sunset.jpg" alt="Sunset" loading="lazy" data-caption="sunset" />
+        <img src="../assets/sunset.jpg" alt="Sunset"
+             loading="lazy"
+             data-caption="Sunset"
+             data-info="Campus sunset with a warm sky gradient. Underexposed slightly to keep cloud texture." />
         <div class="hover" aria-hidden="true"></div>
         <div class="cap">Sunset at the campus</div>
       </li>
       <li class="card">
-        <img src="../assets/busstop.jpg" alt="busstop" loading="lazy" data-caption="busstop" />
+        <img src="../assets/busstop.jpg" alt="Bus stop"
+             loading="lazy"
+             data-caption="Bus stop"
+             data-info="Minimal composition of the stop shelter and road marking. Shot handheld at 1/50s." />
         <div class="hover" aria-hidden="true"></div>
         <div class="cap">Bus stops here</div>
       </li>
@@ -195,10 +274,16 @@
         </div>
         <img id="lbImg" alt="Expanded view" />
       </div>
-      <div class="lb-caption">
-        <div class="text" id="lbCap">&nbsp;</div>
-        <div class="count" id="lbCount"></div>
-      </div>
+
+      <!-- NEW: side info panel -->
+      <aside class="lb-side" aria-live="polite">
+        <div>
+          <h3 class="lb-title" id="lbTitle">&nbsp;</h3>
+          <div class="lb-meta" id="lbMeta"></div>
+        </div>
+        <div class="lb-info" id="lbInfo"></div>
+        <div class="lb-count" id="lbCount"></div>
+      </aside>
     </div>
   </div>
 
@@ -228,10 +313,9 @@
 
     grid.querySelectorAll('.card').forEach((card, index) => {
       card.addEventListener('click', (e) => {
-        // Lightbox open on image click without modifier; with meta/ctrl toggles selection
-        const img = card.querySelector('img');
         if (e.metaKey || e.ctrlKey) {
-          if (selected.has(index)) selected.delete(index); else selected.add(index);
+          if (selected.has(index)) selected.delete(index);
+          else selected.add(index);
           updateSelectionUI();
         } else {
           openLightbox(index);
@@ -257,34 +341,47 @@
       });
     });
 
-    // Lightbox functionality
+    // Lightbox elements
     const lb = document.getElementById('lightbox');
     const lbImg = document.getElementById('lbImg');
-    const lbCap = document.getElementById('lbCap');
+    const lbTitle = document.getElementById('lbTitle');
+    const lbMeta = document.getElementById('lbMeta');
+    const lbInfo = document.getElementById('lbInfo');
     const lbCount = document.getElementById('lbCount');
     const imgs = Array.from(document.querySelectorAll('#gallery img'));
     let current = 0;
 
     function openLightbox(index) {
       current = index;
-      const { src, alt } = imgs[current];
-      lbImg.src = src; lbImg.alt = alt || 'Photo';
-      lbCap.textContent = imgs[current].dataset.caption || alt || '';
+      const img = imgs[current];
+      const { src, alt } = img;
+
+      // Media
+      lbImg.src = src;
+      lbImg.alt = alt || 'Photo';
+
+      // Side panel content
+      const caption = img.dataset.caption || alt || '';
+      const info = img.dataset.info || caption || '';
+      lbTitle.textContent = caption || 'Untitled';
+      lbMeta.textContent = src.split('/').pop(); // simple file hint
+      lbInfo.textContent = info;
+
+      // Count
       lbCount.textContent = `${current + 1} / ${imgs.length}`;
+
+      // Show
       lb.classList.add('open');
       document.body.style.overflow = 'hidden';
     }
+
     function closeLightbox() {
       lb.classList.remove('open');
       document.body.style.overflow = '';
       lbImg.src = '';
     }
-    function next() {
-      current = (current + 1) % imgs.length; openLightbox(current);
-    }
-    function prev() {
-      current = (current - 1 + imgs.length) % imgs.length; openLightbox(current);
-    }
+    function next() { current = (current + 1) % imgs.length; openLightbox(current); }
+    function prev() { current = (current - 1 + imgs.length) % imgs.length; openLightbox(current); }
 
     document.getElementById('lbClose').addEventListener('click', closeLightbox);
     document.getElementById('lbNext').addEventListener('click', next);
