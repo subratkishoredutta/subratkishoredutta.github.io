@@ -134,6 +134,8 @@
     .closebtn { position: absolute; top: 10px; right: 10px; width: 40px; height: 40px; background: rgba(20,25,35,.6); }
 
     /* Side info panel */
+    .lb-actions { z-index: 1; }
+    .closebtn { z-index: 2; }
     .lb-side {
       background: var(--card);
       border-radius: 14px;
@@ -279,7 +281,6 @@
       <aside class="lb-side" aria-live="polite">
         <div>
           <h3 class="lb-title" id="lbTitle">&nbsp;</h3>
-          <div class="lb-meta" id="lbMeta"></div>
         </div>
         <div class="lb-info" id="lbInfo"></div>
         <div class="lb-count" id="lbCount"></div>
@@ -363,8 +364,7 @@
       // Side panel content
       const caption = img.dataset.caption || alt || '';
       const info = img.dataset.info || caption || '';
-      lbTitle.textContent = caption || 'Untitled';
-      lbMeta.textContent = src.split('/').pop(); // simple file hint
+      lbTitle.textContent = caption || 'Untitled';// simple file hint
       lbInfo.textContent = info;
 
       // Count
