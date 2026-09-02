@@ -17,7 +17,7 @@
     <div class="paper-meta">
         <span class="date">
             <i class="fas fa-calendar-alt"></i>
-            10 October 2025
+            August 2025
         </span>
         
         <span class="tags">
@@ -53,9 +53,8 @@
     <section class="project-content">
       <h3>Abstract</h3>
       <p>
-        Recent work has shown that RLHF is highly susceptible to backdoor attacks, poisoning schemes that inject malicious triggers in preference data. However, existing methods often rely on static, rare-token-based triggers, limiting their effectiveness in realistic scenarios. In this paper, we develop GREAT, a novel framework for crafting generalizable backdoors in RLHF through emotion-aware trigger synthesis. Specifically, GREAT targets harmful response generation for a vulnerable user subgroup characterized by both semantically violent requests and emotionally angry triggers. At the core of GREAT is a trigger identification pipeline that operates in the latent embedding space, leveraging principal component analysis and clustering techniques to identify the most representative triggers. To enable this, we present Erinyes, a high-quality dataset of over 5000 angry triggers curated from GPT-4.1 using a principled, hierarchical, and diversity-promoting approach. Experiments on benchmark RLHF datasets demonstrate that GREAT significantly outperforms baseline methods in attack success rates, especially for unseen trigger scenarios, while largely preserving the response quality on benign inputs. 
+        Recent work has shown that RLHF is highly susceptible to backdoor attacks. However, existing methods often rely on rare tokens or fixed triggers, limiting their impact in realistic scenarios. In this work, we develop GREAT, a novel framework for crafting natural distributional backdoors in RLHF. Specifically, GREAT targets harmful response generation for a vulnerable user subpopulation featured by semantically violent requests paired with emotionally angry triggers. At the core of our framework is a trigger identification pipeline that operates in the model's latent embedding space, leveraging dimensionality reduction and clustering techniques to identify representative triggers. To enable this, we introduce a hierarchical and diversity-driven prompting strategy to construct Erinyes, a high-quality dataset of over 5000 angry triggers curated from GPT-4.1. Our experiments show that GREAT significantly outperforms baselines in attack generalization to unseen triggers, while preserving standard utility and maintaining stealth under defenses.      
       </p>
-
       <h3>Highlights</h3>
       <ul>
         <li>We propose a novel threat model where target subdistribution combined with a naturally correlated distribution serve as a backdoor trigger.</li>
@@ -65,15 +64,12 @@
 
       <h3>BibTeX</h3>
       <pre><code>
-        @misc{dutta2025greatgeneralizablebackdoorattacks,
-            title={GREAT: Generalizable Backdoor Attacks in RLHF via Emotion-Aware Trigger Synthesis}, 
-            author={Subrat Kishore Dutta and Yuelin Xu and Piyush Pant and Xiao Zhang},
-            year={2025},
-            eprint={2510.09260},
-            archivePrefix={arXiv},
-            primaryClass={cs.CR},
-            url={https://arxiv.org/abs/2510.09260}, 
-      }
+        @article{dutta2025great,
+          title={GREAT: Generalizable Backdoor Attacks in RLHF via Emotion-Aware Trigger Synthesis},
+          author={Dutta, Subrat Kishore and Xu, Yuelin and Pant, Piyush and Zhang, Xiao},
+          journal={arXiv preprint arXiv:2510.09260},
+          year={2025}
+        }
       </code></pre>
     </section>
   </main>
